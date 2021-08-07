@@ -1,4 +1,7 @@
 /*
+ *  Smart Search - An elegant way search on browsers...
+ *  Copyright (C) 2021 A. Taha Baki
+ *
  *  This file is part of Smart Search.
  *
  *  Smart Search is free software: you can redistribute it and/or modify
