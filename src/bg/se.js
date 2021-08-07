@@ -25,6 +25,12 @@
  *
  */
 class SE {
+	/**
+	 * @param {String} codename - used on omnibox searches to reduce typing.
+	 * @param {String} name - name of the search engine.
+	 * @param {String} url - url which should contain `{%query%}` in order to generate
+	 * the right uri with the given search query...
+	 */
 	constructor(codename, name, url) {
 		this.codename = codename
 		this.name = name
