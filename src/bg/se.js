@@ -18,12 +18,12 @@
  *  along with Smart Search.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-/*
+/**
  * SE: Abbreviation of "Search Engine"
  * 
  * Holds a codename, actual name, and the url...
  *
-*/
+ */
 class SE {
 	constructor(codename, name, url) {
 		this.codename = codename
