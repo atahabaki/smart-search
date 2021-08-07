@@ -26,6 +26,11 @@
  */
 class SE {
 	/**
+	 * URL should contain this string, will be used to replace it and generate
+	 * an URL
+	 */
+	static #PLACEHOLDER = "{%query%}"
+	/**
 	 * @param {String} codename - used on omnibox searches to reduce typing.
 	 * @param {String} name - name of the search engine.
 	 * @param {String} url - url which should contain `{%query%}` in order to generate
