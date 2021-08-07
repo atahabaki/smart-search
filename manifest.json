@@ -8,5 +8,8 @@
 		"scripts": [
 			"src/bg.js"
 		]
+	},
+	"omnibox": {
+		"keyword": "@"
 	}
 }
