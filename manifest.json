@@ -3,5 +3,10 @@
 	"description": "An elegant way to search...",
 	"version": "0.0.1",
 	"homepage_url": "https://github.com/atahabaki/smart-search",
-	"manifest_version": 2
+	"manifest_version": 2,
+	"background": {
+		"scripts": [
+			"src/bg.js"
+		]
+	}
 }
