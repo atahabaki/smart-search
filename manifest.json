@@ -7,6 +7,7 @@
 	"background": {
 		"scripts": [
 			"src/bg/se.js",
+			"src/bg/defaults.js",
 			"src/bg/bg.js"
 		]
 	},
