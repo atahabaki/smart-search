@@ -8,6 +8,7 @@
 		"scripts": [
 			"src/bg/se.js",
 			"src/bg/const.js",
+			"src/bg/ss.js",
 			"src/bg/bg.js"
 		]
 	},
