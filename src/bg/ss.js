@@ -67,6 +67,30 @@ class SmartSearch {
 	}
 
 	/**
+	 * Loads the saved settings via *browser.storage* API.
+	 */
+	#load() {
+		const assign = obj => {
+			let settings = Settings.fromObj(obj)
+			this.sites = settings.sites
+			this.site = settings.site
+			this.isSyncEnabled = settings.sync
+		}
+		if (this.isSyncEnabled) chrome.storage.sync.get(
+				Object.keys(this.#data().toObj()),
+				res => {
+					console.log('Result (sync):', res)
+					assign(res)
+				});
+		else chrome.storage.local.get(
+				Object.keys(this.#data().toObj()),
+				res => {
+					console.log('Result (local):', res)
+					assign(res)
+				});
+	}
+
+	/**
 	 * TODO update documentation...
 	 * initializes, addsListeners to omnibox, and etc...
 	 */
