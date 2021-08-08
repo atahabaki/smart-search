@@ -49,7 +49,9 @@ class SE {
 	/**
 	 * Generates URL by replacing url's "{%query%}" with the given query...
 	 * @param {String} query - used to generate the uri with this
+	 * @returns {String}
 	 */
 	generateUrlWithQuery(query) {
+		return this.url.replace(SE.#PLACEHOLDER, query)
 	}
 }
