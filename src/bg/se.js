@@ -43,7 +43,7 @@ class SE {
 			this.url = url
 		}
 		else {
-			// TODO send an error, url is not valid...
+			throw `Invalid URL! SE's url must include "${SE.#PLACEHOLDER}"!`
 		}
 	}
 	/**
