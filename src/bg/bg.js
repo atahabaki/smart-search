@@ -18,5 +18,5 @@
  *  along with Smart Search.  If not, see <https://www.gnu.org/licenses/>.
 */
 
-let app = new SmartSearch()
+let app = new SmartSearch(FALLBACK_SEARCH_ENGINES, FALLBACK_SEARCH_ENGINE)
 app.run()
