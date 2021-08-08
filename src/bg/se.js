@@ -39,7 +39,12 @@ class SE {
 	constructor(codename, name, url) {
 		this.codename = codename
 		this.name = name
-		this.url = url
+		if (url.includes(SE.#PLACEHOLDER)) {
+			this.url = url
+		}
+		else {
+			// TODO send an error, url is not valid...
+		}
 	}
 	/**
 	 * Generates URL by replacing url's "{%query%}" with the given query...
