@@ -3,6 +3,10 @@
         "description": "Uygulamanın adı...",
         "message": "Akıllı Arama"
     },
+    "app_desc": {
+        "description": "Uygulamanın açıklaması...",
+        "message": "Aramanızı kolaylaştıran bir internet tarayıcısı eklentisi."
+    },
     "default_suggestion": {
         "description": "Varsayılan omnibox önerisi...",
         "message": "{%siteName%} ile arama yapın..."

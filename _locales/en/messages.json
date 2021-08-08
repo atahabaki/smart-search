@@ -3,6 +3,10 @@
         "description": "App's name...",
         "message": "Smart Search"
     },
+    "app_desc": {
+        "description": "App's description...",
+        "message": "A web browser extension which is eases the way you search."
+    },
     "default_suggestion": {
         "description": "Default omnibox suggestion...",
         "message": "Search on {%siteName%}..."
