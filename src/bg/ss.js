@@ -32,6 +32,9 @@ class SmartSearch {
 	 * `browser.storage.local` API.
 	 */
 	constructor(fallbackSites, fallbackSite, isSyncEnabled = false) {
+		this.fallbackSites = fallbackSites
+		this.fallbackSite = fallbackSite
+		this.isSyncEnabled = isSyncEnabled
 	}
 
 	/**
