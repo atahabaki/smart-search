@@ -1,4 +1,8 @@
 {
+    "app_name": {
+        "description": "Uygulamanın adı...",
+        "message": "Akıllı Arama"
+    },
     "default_suggestion": {
         "description": "Varsayılan omnibox önerisi...",
         "message": "{%siteName%} ile arama yapın..."

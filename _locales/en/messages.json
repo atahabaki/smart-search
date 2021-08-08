@@ -1,4 +1,8 @@
 {
+    "app_name": {
+        "description": "App's name...",
+        "message": "Smart Search"
+    },
     "default_suggestion": {
         "description": "Default omnibox suggestion...",
         "message": "Search on {%siteName%}..."
