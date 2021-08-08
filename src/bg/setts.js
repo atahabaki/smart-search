@@ -32,4 +32,16 @@ class Settings{
         this.site = site
         this.sync = isSyncEnabled
     }
+
+    /**
+     * It's easy to parse to JSON from Object, so made a function for that.
+     * @returns {Object}
+     */
+    toObj() {
+        return {
+            "sites": this.sites,
+            "site": this.site,
+            "sync": this.sync
+        }
+    }
 }
