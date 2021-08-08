@@ -1,6 +1,6 @@
 {
-	"name": "Smart Search",
-	"description": "A web browser extension which is eases the way you search.",
+	"name": "__MSG_app_name__",
+	"description": "__MSG_app_desc__",
 	"version": "0.0.1",
 	"homepage_url": "https://github.com/atahabaki/smart-search",
 	"manifest_version": 2,
