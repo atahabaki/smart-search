@@ -34,3 +34,9 @@ const FALLBACK_SEARCH_ENGINES = [
 	new SE("gthb", "GitHub", "https://github.com/search?q={%query%}"),
 	new SE("adox", "Android Developers", "https://developer.android.com/s/results?q={%query%}"),
 ]
+/**
+ * Before loading the default search engine with 'browser.storage' API,
+ * use this SE as the default SE.
+ * @type {SE}
+ */
+const FALLBACK_SEARCH_ENGINE = predefined_sites[0];
