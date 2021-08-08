@@ -46,6 +46,23 @@ class SmartSearch {
 	}
 
 	/**
+	 * Saves current settings with browser.storage.StorageArea API. StorageArea is
+	 * picked by the value of *isSyncEnabled*, if it's true then 'sync', else 'local'.
+	 */
+	#save() {
+		if (this.isSyncEnabled) chrome.storage.sync.set(
+				this.#data().toObj(),
+				_ => {
+					console.log("Saved (sync)!..", this.#data().toObj())
+				});
+		else chrome.storage.local.set(
+				this.#data().toObj(),
+				_ => {
+					console.log("Saved (local)!..", this.#data().toObj())
+				});
+	}
+
+	/**
 	 * TODO update documentation...
 	 * initializes, addsListeners to omnibox, and etc...
 	 */
