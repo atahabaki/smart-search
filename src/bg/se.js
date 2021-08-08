@@ -1,5 +1,5 @@
 /*
- *  Smart Search - An elegant way search on browsers...
+ *  Smart Search - A web browser extension which is eases the way you search.
  *  Copyright (C) 2021 A. Taha Baki
  *
  *  This file is part of Smart Search.
