@@ -1,6 +1,7 @@
 {
 	"name": "__MSG_app_name__",
 	"description": "__MSG_app_desc__",
+	"author": "A. Taha Baki",
 	"version": "0.0.1",
 	"homepage_url": "https://github.com/atahabaki/smart-search",
 	"manifest_version": 2,
