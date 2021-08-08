@@ -39,4 +39,4 @@ const FALLBACK_SEARCH_ENGINES = [
  * use this SE as the default SE.
  * @type {SE}
  */
-const FALLBACK_SEARCH_ENGINE = predefined_sites[0];
+const FALLBACK_SEARCH_ENGINE = FALLBACK_SEARCH_ENGINES[0];
