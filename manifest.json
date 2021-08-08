@@ -4,6 +4,7 @@
 	"version": "0.0.1",
 	"homepage_url": "https://github.com/atahabaki/smart-search",
 	"manifest_version": 2,
+	"default_locale": "en",
 	"background": {
 		"scripts": [
 			"src/bg/se.js",
