@@ -38,6 +38,14 @@ class SmartSearch {
 	}
 
 	/**
+	 * Gets the current settings.
+	 * @returns {Settings}
+	 */
+	#data() {
+		return new Settings(this.sites, this.site, this.isSyncEnabled)
+	}
+
+	/**
 	 * TODO update documentation...
 	 * initializes, addsListeners to omnibox, and etc...
 	 */
