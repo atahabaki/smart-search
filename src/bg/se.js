@@ -32,7 +32,9 @@ class SE {
 	static #PLACEHOLDER = "{%query%}"
 	/**
 	 * @param {String} codename - used on omnibox searches to reduce typing.
+	 * 
 	 * @param {String} name - name of the search engine.
+	 * 
 	 * @param {String} url - url which should contain `{%query%}` in order to 
 	 * generate the right uri with the given search query...
 	 */
@@ -48,7 +50,9 @@ class SE {
 	}
 	/**
 	 * Generates URL by replacing url's "{%query%}" with the given query...
+	 * 
 	 * @param {String} query - used to generate the uri with this
+	 * 
 	 * @returns {String}
 	 */
 	generateUrlWithQuery(query) {

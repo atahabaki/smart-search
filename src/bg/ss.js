@@ -23,13 +23,15 @@
  */
 class SmartSearch {
 	/**
-	 * @param {Array.<SE>} fallbackSites - Use these SEs as default if browser.storage
-	 * API fails to load default SEs.
-	 * @param {SE} fallbackSite - Use this SE as default SE if browser.storage API
-	 * fails to load default SE.
-	 * @param {boolean} isSyncEnabled - Initialize save method, if it's set to true,
-	 * SmartSearch saves the settings with `browser.storage.sync` otherwise, it'll use
-	 * `browser.storage.local` API.
+	 * @param {Array.<SE>} fallbackSites - Use these SEs as default if
+	 * browser.storage API fails to load default SEs.
+	 *
+	 * @param {SE} fallbackSite - Use this SE as default SE if
+	 * browser.storage API fails to load default SE.
+	 *
+	 * @param {boolean} isSyncEnabled - Initialize save method, if
+	 * it's set to true, SmartSearch saves the settings with 
+	 * `browser.storage.sync` otherwise, it'll use `browser.storage.local` API.
 	 */
 	constructor(fallbackSites, fallbackSite, isSyncEnabled = false) {
 		this.sites = fallbackSites
@@ -39,6 +41,7 @@ class SmartSearch {
 
 	/**
 	 * Gets the current settings.
+     *
 	 * @returns {Settings}
 	 */
 	#data() {
@@ -46,8 +49,9 @@ class SmartSearch {
 	}
 
 	/**
-	 * Saves current settings with browser.storage.StorageArea API. StorageArea is
-	 * picked by the value of *isSyncEnabled*, if it's true then 'sync', else 'local'.
+	 * Saves current settings with browser.storage.StorageArea API. 
+	 * StorageArea is picked by the value of *isSyncEnabled*, if it's true 
+	 * then 'sync', else 'local'.
 	 */
 	#save() {
 		if (this.isSyncEnabled) chrome.storage.sync.set(

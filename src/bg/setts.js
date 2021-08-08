@@ -24,8 +24,11 @@
 class Settings{
 	/**
 	 * @param {Array.<SE>} sites - Saves the default sites.
+     *
 	 * @param {SE} site - Saves the default site.
-	 * @param {boolean} isSyncEnabled - Saves the info about local or sync to be used.
+     *
+	 * @param {boolean} isSyncEnabled - Saves the info about local or sync to 
+     * be used.
 	 */
     constructor(sites, site, isSyncEnabled) {
         this.sites = sites
@@ -35,6 +38,7 @@ class Settings{
 
     /**
      * It's easy to parse to JSON from Object, so made a function for that.
+     *
      * @returns {Object}
      */
     toObj() {

@@ -21,22 +21,27 @@
 /**
  * Before loading the search engines with 'browser.storage' API, 
  * use these SEs as default.
+ *
  * @type {Array.<SE>}
  */
 const FALLBACK_SEARCH_ENGINES = [
-	new SE("ytb", "YouTube", "https://www.youtube.com/results?search_query={%query%}"),
+	new SE("ytb", "YouTube",
+			"https://www.youtube.com/results?search_query={%query%}"),
 	new SE("ggl", "Google", "https://www.google.com/search?q={%query%}"),
 	new SE("bng", "Bing", "https://www.bing.com/search?q={%query%}"),
 	new SE("yaho", "Yahoo", "https://search.yahoo.com/?q={%query%}"),
 	new SE("dckg", "DuckDuckGo", "https://duckduckgo.com/?q={%query%}"),
-	new SE("iconf", "IconFinder", "https://www.iconfinder.com/search/?q={%query%}"),
+	new SE("iconf", "IconFinder",
+			"https://www.iconfinder.com/search/?q={%query%}"),
 	new SE("rddt", "Reddit", "https://www.reddit.com/search/?q={%query%}"),
 	new SE("gthb", "GitHub", "https://github.com/search?q={%query%}"),
-	new SE("adox", "Android Developers", "https://developer.android.com/s/results?q={%query%}"),
+	new SE("adox", "Android Developers",
+			"https://developer.android.com/s/results?q={%query%}"),
 ]
 /**
  * Before loading the default search engine with 'browser.storage' API,
  * use this SE as the default SE.
+ * 
  * @type {SE}
  */
 const FALLBACK_SEARCH_ENGINE = FALLBACK_SEARCH_ENGINES[0];
