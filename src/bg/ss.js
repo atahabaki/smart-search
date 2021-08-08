@@ -33,4 +33,11 @@ class SmartSearch {
 	 */
 	constructor(fallbackSites, fallbackSite, isSyncEnabled = false) {
 	}
+
+	/**
+	 * TODO update documentation...
+	 * initializes, addsListeners to omnibox, and etc...
+	 */
+	run() {
+	}
 }
