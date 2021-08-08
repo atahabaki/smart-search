@@ -48,4 +48,21 @@ class Settings{
             "sync": this.sync
         }
     }
+
+    /**
+     * Generate Settings from an Object.
+     * 
+     * @param {Object} obj - used to generate Settings.
+     */
+    static fromObj(obj) {
+        return new Settings(
+                obj.hasOwnProperty("sites") ?
+                        obj["sites"] :
+                        FALLBACK_SEARCH_ENGINES,
+                obj.hasOwnProperty("site") ?
+                        obj["site"] :
+                        FALLBACK_SEARCH_ENGINE,
+                obj.hasOwnProperty("sync") ? obj["sync"] : false
+            )
+    }
 }
