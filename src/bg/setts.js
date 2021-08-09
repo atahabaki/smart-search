@@ -65,4 +65,21 @@ class Settings{
                 obj.hasOwnProperty("sync") ? obj["sync"] : false
             )
     }
+
+    /**
+     * If the given object is valid, returns true, otherwise returns false.
+     * 
+     * @param {Object} obj - Used to determine whether this 
+     * object is valid or not.
+     * 
+     * @returns {Boolean}
+     */
+    static isValidObj(obj) {
+        if (obj.hasOwnProperty("sites") ||
+            obj.hasOwnProperty("site") ||
+            obj.hasOwnProperty("sync")) {
+                return true
+        }
+        return false
+    }
 }
