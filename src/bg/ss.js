@@ -69,14 +69,14 @@ class SmartSearch {
 	/**
 	 * Loads the saved settings via *chrome.storage* API.
 	 */
-	#load() {
+	#load(isSyncEnabled = this.isSyncEnabled) {
 		const assign = obj => {
 			let settings = Settings.fromObj(obj)
 			this.sites = settings.sites
 			this.site = settings.site
 			this.isSyncEnabled = settings.sync
 		}
-		if (this.isSyncEnabled) chrome.storage.sync.get(
+		if (isSyncEnabled) chrome.storage.sync.get(
 				Object.keys(this.#data().toObj()),
 				res => {
 					console.log('Result (sync):', res)
@@ -96,7 +96,7 @@ class SmartSearch {
 	#onFirstInstall() {
 		chrome.runtime.onInstalled.addListener(details => {
 			if (details.reason === chrome.runtime.OnInstalledReason.INSTALL)
-				this.#load();
+				this.#load(true);
 		})
 	}
 
