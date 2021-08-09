@@ -74,8 +74,12 @@ class SmartSearch {
 	 *
 	 * @param {Boolean} isSyncEnabled - Determines whether to use
 	 * 'chrome.storage.sync' or 'chrome.storage.local' API.
+	 * 
+	 * @param {Boolean} firstInstall - Check if the user saved anything in
+	 * the cloud, and load everything from the cloud if the user left the sync
+	 * option true.
 	 */
-	#load(isSyncEnabled = this.isSyncEnabled) {
+	#load(isSyncEnabled = this.isSyncEnabled, firstInstall = false) {
 		const assign = obj => {
 			let settings = Settings.fromObj(obj)
 			this.sites = settings.sites
@@ -87,6 +91,12 @@ class SmartSearch {
 				res => {
 					console.log('Result (sync):', res)
 					assign(res)
+					if (firstInstall && 
+							Settings.isValidObj(res) &&
+							res["sync"] === true) {
+						this.isSyncEnabled = true
+						this.#save(false);
+					}
 				});
 		else chrome.storage.local.get(
 				Object.keys(this.#data().toObj()),
@@ -102,7 +112,7 @@ class SmartSearch {
 	#onFirstInstall() {
 		chrome.runtime.onInstalled.addListener(details => {
 			if (details.reason === chrome.runtime.OnInstalledReason.INSTALL)
-				this.#load(true);
+				this.#load(true, true);
 		})
 	}
 
