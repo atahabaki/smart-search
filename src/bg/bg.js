@@ -19,4 +19,5 @@
 */
 
 let app = new SmartSearch(FALLBACK_SEARCH_ENGINES, FALLBACK_SEARCH_ENGINE)
+app.init()
 app.run()
