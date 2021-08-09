@@ -91,6 +91,16 @@ class SmartSearch {
 	}
 
 	/**
+	 * Get settings from the cloud on first install.
+	 */
+	#onFirstInstall() {
+		chrome.runtime.onInstalled.addListener(details => {
+			if (details.reason === chrome.runtime.OnInstalledReason.INSTALL)
+				this.#load();
+		})
+	}
+
+	/**
 	 * TODO update documentation...
 	 * initializes, addsListeners to omnibox, and etc...
 	 */
