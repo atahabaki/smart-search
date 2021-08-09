@@ -68,6 +68,9 @@ class SmartSearch {
 
 	/**
 	 * Loads the saved settings via *chrome.storage* API.
+	 *
+	 * @param {Boolean} isSyncEnabled - Determines whether to use
+	 * 'chrome.storage.sync' or 'chrome.storage.local' API.
 	 */
 	#load(isSyncEnabled = this.isSyncEnabled) {
 		const assign = obj => {
