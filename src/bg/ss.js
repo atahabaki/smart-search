@@ -52,9 +52,12 @@ class SmartSearch {
 	 * Saves current settings with chrome.storage.StorageArea API. 
 	 * StorageArea is picked by the value of *isSyncEnabled*, if it's true 
 	 * then 'sync', else 'local'.
+	 * 
+	 * @param {Boolean} isSyncEnabled - Determines whether to use
+	 * 'chrome.storage.sync' or 'chrome.storage.local' API.
 	 */
-	#save() {
-		if (this.isSyncEnabled) chrome.storage.sync.set(
+	#save(isSyncEnabled = this.isSyncEnabled) {
+		if (isSyncEnabled) chrome.storage.sync.set(
 				this.#data().toObj(),
 				_ => {
 					console.log("Saved (sync)!..", this.#data().toObj())
