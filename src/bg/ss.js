@@ -24,14 +24,14 @@
 class SmartSearch {
 	/**
 	 * @param {Array.<SE>} fallbackSites - Use these SEs as default if
-	 * browser.storage API fails to load default SEs.
+	 * chrome.storage API fails to load default SEs.
 	 *
 	 * @param {SE} fallbackSite - Use this SE as default SE if
-	 * browser.storage API fails to load default SE.
+	 * chrome.storage API fails to load default SE.
 	 *
 	 * @param {boolean} isSyncEnabled - Initialize save method, if
 	 * it's set to true, SmartSearch saves the settings with 
-	 * `browser.storage.sync` otherwise, it'll use `browser.storage.local` API.
+	 * `chrome.storage.sync` otherwise, it'll use `chrome.storage.local` API.
 	 */
 	constructor(fallbackSites, fallbackSite, isSyncEnabled = false) {
 		this.sites = fallbackSites
@@ -49,7 +49,7 @@ class SmartSearch {
 	}
 
 	/**
-	 * Saves current settings with browser.storage.StorageArea API. 
+	 * Saves current settings with chrome.storage.StorageArea API. 
 	 * StorageArea is picked by the value of *isSyncEnabled*, if it's true 
 	 * then 'sync', else 'local'.
 	 */
@@ -67,7 +67,7 @@ class SmartSearch {
 	}
 
 	/**
-	 * Loads the saved settings via *browser.storage* API.
+	 * Loads the saved settings via *chrome.storage* API.
 	 */
 	#load() {
 		const assign = obj => {

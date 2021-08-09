@@ -19,7 +19,7 @@
 */
 
 /**
- * Before loading the search engines with 'browser.storage' API, 
+ * Before loading the search engines with 'chrome.storage' API, 
  * use these SEs as default.
  *
  * @type {Array.<SE>}
@@ -39,7 +39,7 @@ const FALLBACK_SEARCH_ENGINES = [
 			"https://developer.android.com/s/results?q={%query%}"),
 ]
 /**
- * Before loading the default search engine with 'browser.storage' API,
+ * Before loading the default search engine with 'chrome.storage' API,
  * use this SE as the default SE.
  * 
  * @type {SE}
