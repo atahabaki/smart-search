@@ -18,6 +18,7 @@
 	"browser_specific_settings": {
 		"gecko": {
 			"id": "smart-search@atahabaki.dev",
+			"strict_min_version": "52"
 		}
 	},
 	"permissions": [
