@@ -40,6 +40,11 @@ class SmartSearch {
 	}
 
 	/**
+	 * Search with a SE
+	 */
+	#searchWithSE = /([\w0-9]+)[\v\t ]+(.*)/
+
+	/**
 	 * Gets the current settings.
      *
 	 * @returns {Settings}
@@ -117,6 +122,55 @@ class SmartSearch {
 	}
 
 	/**
+	 * Depending on the entered text, it may do the followings:
+	 * - Search sth. on the default SE,
+	 * - Search sth. on the specified SE,
+	 * - Change SS settings such as enabling or disabling synchronization,
+	 * - and etc.
+	 */
+	#onInputEntered() {
+		/**
+		 * Navigates to given url at current or set disposition.
+		 * 
+		 * @param {String} url 
+		 * @param {chrome.omnibox.OnInputEnteredDisposition} disposition 
+		 */
+		const navigate = (url, disposition) => {
+			switch (disposition) {
+				case "currentTab":
+					chrome.tabs.update({url});
+					break;
+				case "newForegroundTab":
+					chrome.tabs.create({url, active: true});
+					break;
+				case "newBackgroundTab":
+					chrome.tabs.create({url, active: false});
+					break;
+			}
+		}
+		chrome.omnibox.onInputEntered.addListener((text, disposition) => {
+			const navDefault = x => navigate(
+					this.site.url.replace("{%query%}", x),
+					disposition
+				)
+			let _resSearchWithSE = text.match(this.#searchWithSE)
+			if (_resSearchWithSE != null && _resSearchWithSE.length === 3) {
+				let _res = this.sites.filter(e => 
+						e.codename === _resSearchWithSE[1])
+				/* Pick the first one occurance... */
+				if (_res.length >= 1) {
+					navigate(
+							_res[0].url.replace("{%query%}",_resSearchWithSE[2]),
+							disposition)
+				}
+				/* In case of no match, navigate to default... */
+				else navDefault(text);
+			}
+			else navDefault(text);
+		})
+	}
+
+	/**
 	 * Initialize everything.
 	 */
 	init() {
@@ -128,5 +182,6 @@ class SmartSearch {
 	 * initializes, addsListeners to omnibox, and etc...
 	 */
 	run() {
+		this.#onInputEntered()
 	}
 }
