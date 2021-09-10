@@ -158,6 +158,7 @@ class SmartSearch {
 					disposition
 				)
 			let _resSearchWithSE = text.match(this.#searchWithSE)
+			let _resAddSE = text.match(this.#addSE)
 			if (_resSearchWithSE != null && _resSearchWithSE.length === 3) {
 				let _res = this.sites.filter(e => 
 						e.codename === _resSearchWithSE[1])
@@ -169,6 +170,14 @@ class SmartSearch {
 				}
 				/* In case of no match, navigate to default... */
 				else navDefault(text);
+			}
+			else if (_resAddSE != null && _resAddSE.length === 5) {
+				try {
+					this.sites.push(new SE(_resAddSE[2], _resAddSE[3], _resAddSE[4]))
+				} catch (e) {
+					console.error("Error occured @`Add SE regex, onInputEntered`!..", e)
+				}
+				console.log(this.sites)
 			}
 			else navDefault(text);
 		})
