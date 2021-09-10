@@ -171,6 +171,18 @@ class SmartSearch {
 	}
 
 	/**
+	 * Sets the default suggestion of omnibox.
+	 * 
+	 * @param {String} suggestion 
+	 */
+	#setDefaultSuggestion(suggestion) {
+		if (suggestion != null) chrome.omnibox.setDefaultSuggestion({
+					"description": suggestion
+				})
+		else throw `Invalid suggestion passed. Suggestion should not be empty.`
+	}
+
+	/**
 	 * Initialize everything.
 	 */
 	init() {
