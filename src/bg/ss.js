@@ -42,7 +42,7 @@ class SmartSearch {
 	/**
 	 * Search with a SE
 	 */
-	#searchWithSE = /([\w0-9]+)[\v\t ]+(.*)/
+	#searchWithSE = /^([\w0-9]+)[\v\t ]+(.*)/
 	/**
 	 * RegEx expression of 'Add a SE to this.sites'...
 	 */
