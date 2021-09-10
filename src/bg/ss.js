@@ -50,7 +50,7 @@ class SmartSearch {
 
 	/**
 	 * Gets the current settings.
-     *
+   *
 	 * @returns {Settings}
 	 */
 	#data() {
