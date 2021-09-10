@@ -43,6 +43,10 @@ class SmartSearch {
 	 * Search with a SE
 	 */
 	#searchWithSE = /([\w0-9]+)[\v\t ]+(.*)/
+	/**
+	 * RegEx expression of 'Add a SE to this.sites'...
+	 */
+	#addSE = /^(\+)([\w\d]+)[\s\t\v]+["']?([\w\d\s]+)["']?[\s\t\v]+(.*)/
 
 	/**
 	 * Gets the current settings.
